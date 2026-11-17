@@ -8,8 +8,9 @@
     "dev": "node --watch index.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "db:seed": "node db/seed.js",
-    "db:reset": "rm -f taskr.db && node db/seed.js"
+    "db:seed": "node src/db/seed.js",
+    "db:reset": "rm -f taskr.db && node src/db/seed.js",
+    "agentic-mode": "copilot --deny-tool=\"shell(git push:*)\" --deny-tool=\"shell(rm -rf *)\" --deny-tool=\"shell(curl)\" --deny-tool=\"shell(wget)\" --yolo"
   },
   "dependencies": {
     "better-sqlite3": "^12.9.0",
@@ -22,9 +23,7 @@
   "jest": {
     "testEnvironment": "node",
     "testMatch": [
-      "**/tests/*.test.js",
-      "**/tests/userTest.js",
-      "**/tests/test-projects.js"
+      "**/tests/**/*.test.js"
     ]
   }
 }

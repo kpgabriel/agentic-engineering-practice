@@ -1,7 +1,7 @@
 const { DEFAULT_PAGE_SIZE, MAX_PAGE_SIZE } = require('../config/constants');
 
 /**
- * Converts a date string to an ISO 8601 string.
+ * @description Converts a date string to an ISO 8601 string.
  *
  * @param {string} dateStr - The date string to convert.
  * @returns {string|null} The ISO 8601 string, or null if the input is empty or invalid.
@@ -13,7 +13,7 @@ function formatDate(dateStr) {
 }
 
 /**
- * Converts a string to a lowercase, hyphen-separated URL slug.
+ * @description Converts a string to a lowercase, hyphen-separated URL slug.
  *
  * @param {string} str - The string to slugify.
  * @returns {string} The slugified string.
@@ -23,7 +23,7 @@ function slugify(str) {
 }
 
 /**
- * Truncates a string to a maximum length, appending an ellipsis if shortened.
+ * @description Truncates a string to a maximum length, appending an ellipsis if shortened.
  *
  * @param {string} str - The string to truncate.
  * @param {number} len - The maximum number of characters to keep before the ellipsis.
@@ -35,7 +35,7 @@ function truncate(str, len) {
 }
 
 /**
- * Checks whether a value looks like a valid email address.
+ * @description Checks whether a value looks like a valid email address.
  *
  * @param {string} email - The email address to validate.
  * @returns {boolean} True if the email matches the expected format, otherwise false.
@@ -45,7 +45,7 @@ function validateEmail(email) {
 }
 
 /**
- * Checks whether a value is a string containing non-whitespace characters.
+ * @description Checks whether a value is a string containing non-whitespace characters.
  *
  * @param {*} val - The value to check.
  * @returns {boolean} True if the value is a non-empty, non-blank string, otherwise false.
@@ -55,7 +55,7 @@ function isNonEmptyString(val) {
 }
 
 /**
- * Builds pagination metadata for a paged response.
+ * @description Builds pagination metadata for a paged response.
  *
  * @param {number} total - The total number of items.
  * @param {number} page - The current page number.
@@ -72,7 +72,7 @@ function buildPaginationMeta(total, page, pageSize) {
 }
 
 /**
- * Parses a base-10 integer, returning a fallback when parsing fails.
+ * @description Parses a base-10 integer, returning a fallback when parsing fails.
  *
  * @param {*} val - The value to parse.
  * @param {number} fallback - The value to return if parsing yields NaN.
@@ -84,7 +84,7 @@ function parseIntSafe(val, fallback) {
 }
 
 /**
- * Builds a standard error response body.
+ * @description Builds a standard error response body.
  *
  * @param {string} message - The error message.
  * @param {string|number} code - The error code.
@@ -95,8 +95,7 @@ function formatError(message, code) {
 }
 
 /**
- * Converts page and page size inputs into SQL limit and offset values.
- * The page defaults to 1 and the page size is capped at MAX_PAGE_SIZE.
+ * @description Converts page and page size inputs into SQL limit and offset values, defaulting the page to 1 and capping the size at MAX_PAGE_SIZE.
  *
  * @param {number|string} page - The 1-based page number.
  * @param {number|string} pageSize - The requested number of items per page.
@@ -109,7 +108,7 @@ function paginate(page, pageSize) {
 }
 
 /**
- * Creates an Error carrying an HTTP status code.
+ * @description Creates an Error carrying an HTTP status code.
  *
  * @param {number} status - The HTTP status code.
  * @param {string} message - The error message.
@@ -122,7 +121,7 @@ function createHttpError(status, message) {
 }
 
 /**
- * Checks whether an error is a database UNIQUE constraint violation.
+ * @description Checks whether an error is a database UNIQUE constraint violation.
  *
  * @param {Error} err - The error to inspect.
  * @returns {boolean} True if the error message indicates a UNIQUE violation, otherwise false.
